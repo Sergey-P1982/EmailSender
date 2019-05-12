@@ -12,14 +12,14 @@ public class EmailRunner {
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.port", "25");
-        String fromAddress = "seregius82@gmail.com";
-        String toAddress = "seregius82@gmail.com";
+        String fromAddress = "frommail@gmail.com";
+        String toAddress = "tomail@gmail.com";
         String subject = "UPDATE PROFILE";
         String content = "Your profile was updated";
 
         Session session = Session.getDefaultInstance(properties, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(fromAddress, "serenkiy82");
+                return new PasswordAuthentication(fromAddress, "******");
             }
         });
         MailService mailService = new MailServiceImpl(session);
